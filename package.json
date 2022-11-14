@@ -1,0 +1,31 @@
+{
+  "name": "profile-backend-api",
+  "version": "1.0.0",
+  "description": "Its a backend api service for \"Profile\"",
+  "main": "server.js",
+  "scripts": {
+    "test": "test",
+    "start":"nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mohiandipta/profile-api.git"
+  },
+  "keywords": [
+    "api",
+    "node",
+    "express"
+  ],
+  "author": "Mohian Dipta & Abdullah Baig",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mohiandipta/profile-api/issues"
+  },
+  "homepage": "https://github.com/mohiandipta/profile-api#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.3"
+  }
+}
