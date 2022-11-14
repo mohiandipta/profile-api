@@ -1,31 +1,31 @@
 const http = require('http')
+const getReq = require('./controller/GetReq')
+let movies = require('./data/movies.json')
 //require('dotenv').config()
 
 const PORT = process.env.PORT || 5001
 
 const server = http.createServer((req, res) => {
-
+    req.movies = movies
     switch (req.method) {
         case "GET":
-            getReq(req, res)
+            getReq(req, res);
             break;
         case "POST":
-            postReq(req, res)
+            postReq(req, res);
             break;
         case "PUT":
-            putReq(req, res)
+            putReq(req, res);
             break;
         case "DELETE":
-            deleteReq(req, res)
+            delReq(req, res);
             break;
         default:
-            break;
+            res.statusCode = 404
+            res.setHeader("content-type", "application/json")
+            res.write(JSON.stringify({title:'Not Found', message: 'Route not found' }))
+            res.end()
     }
-
-    res.statusCode = 200
-    res.setHeader("content-type", "application/json")
-    res.write(JSON.stringify({ message: 'Hello happy coding!' }))
-    res.end()
 })
 
 
